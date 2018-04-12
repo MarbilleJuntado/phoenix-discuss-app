@@ -4,6 +4,12 @@
   <%= for topic <- @topics do %>
     <li class="collection-item">
       <%= topic.title %>
+      <div class="right">
+        <%= link to: topic_path(@conn, :edit, topic ) do %>
+          <i class="material-icons">edit</i>
+        <% end %>
+        <i class="material-icons red-text">delete</i>
+      </div>
     </li>
   <% end %>
 </ul>
