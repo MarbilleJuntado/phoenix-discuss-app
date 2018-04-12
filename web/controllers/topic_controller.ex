@@ -26,7 +26,7 @@ defmodule Discuss.TopicController do
     end
   end
 
-  def index(conn, params) do
+  def edit(conn, %{"id" => topic_id}) do
     
   end
 end
