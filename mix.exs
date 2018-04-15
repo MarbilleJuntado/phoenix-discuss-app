@@ -20,7 +20,7 @@ defmodule Discuss.Mixfile do
   def application do
     [
       mod: {Discuss, []},
-      extra_applications: [:logger,:ueberauth, :ueberauth_github]
+      extra_applications: [:logger,:ueberauth, :ueberauth_github, :ueberauth_google]
     ]
   end
 
@@ -42,7 +42,8 @@ defmodule Discuss.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:ueberauth, "~> 0.3"},
-      {:ueberauth_github, "~> 0.4"}
+      {:ueberauth_github, "~> 0.4"},
+      {:ueberauth_google, "~> 0.7"}
     ]
   end
 
