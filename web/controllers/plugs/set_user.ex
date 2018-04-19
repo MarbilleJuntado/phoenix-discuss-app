@@ -1,12 +1,11 @@
+
 defmodule Discuss.Plugs.SetUser do
   import Plug.Conn
-  import Phoenix.Controller
 
   alias Discuss.Repo
   alias Discuss.User
 
   def init(_params) do
-    
   end
 
   def call(conn, _params) do
@@ -19,5 +18,4 @@ defmodule Discuss.Plugs.SetUser do
         assign(conn, :user, nil)
     end
   end
-  
 end

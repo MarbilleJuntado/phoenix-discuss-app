@@ -4,7 +4,7 @@ defmodule Discuss.AuthController do
 
   alias Discuss.User
 
-  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, params) do
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     user_params = %{token: auth.credentials.token, email: auth.info.email, provider: Atom.to_string(auth.provider)}
     changeset = User.changeset(%User{}, user_params)
     signin(conn, changeset)
@@ -17,7 +17,7 @@ defmodule Discuss.AuthController do
         |> put_flash(:info, "Welcome back!")
         |> put_session(:user_id, user.id)
         |> redirect(to: topic_path(conn, :index))
-      {:error, reason} ->
+      {:error, _reason} ->
         conn
         |> put_flash(:error, "Error signing in")
         |> redirect(to: topic_path(conn, :index))
