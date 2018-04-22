@@ -10,7 +10,7 @@ defmodule Discuss.CommentsChannel do
   end
 
   # follow-up communication
-  def handle_in(name, message, socket) do
+  def handle_in(name, %{"content" => content}, socket) do
     {:reply, :ok, socket}
   end
 end
